@@ -1,0 +1,13 @@
+<div id="edit-post">
+  <h2>Edit Post</h2>
+  <%= form_for @post do |f| %><br>
+	<%= f.label :post %><br>
+	<%= f.text_area :body %><br>
+	<%= f.submit "edit post"%><br>
+<% end %>
+<br>
+<br>
+<%= link_to "Edit", edit_post_path(@post) %>
+<%= button_to "Delete", post_path(@posts), method: :delete %>
+
+</div>

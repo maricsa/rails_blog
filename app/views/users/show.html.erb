@@ -1,0 +1,37 @@
+
+
+<div id="userw">
+<h2>Welcome <%= @user.username.capitalize %></h2>
+<p><%= @user.email %></p>
+<p><%= @user.username %></p>
+</div>
+
+<div id ="cd">
+<h3><%= link_to("Delete Profile", user_path(@user), method: :delete) %></h3>
+<h3><%= link_to "Edit Profile", edit_user_path(@user) %></h3>
+<br>
+</div>
+
+
+<div id = "postd">
+  <h3>Add your Post</h3>
+ 
+    <%= form_for @post do |f| %>
+	    <%= f.label :post %>
+	    <%= f.text_area :body %>
+	    <%=f.hidden_field :user_id, value: session[:user_id] %>
+	    <%= f.submit %>
+	
+  <% end %>
+</div>
+
+<% @posts.each do |p| %>
+	<%= link_to("Post", post_path(p.id)) %>
+	<p><%= p.body %></p>
+<% end %>
+
+<p><%= form_tag("/logout", method: "delete") do %></p>
+	<p><%= submit_tag("Logout") %></p>
+<% end %>
+</div>
+

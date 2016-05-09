@@ -1,0 +1,34 @@
+<p><%= link_to("User", user_path(@user.id)) %></p>
+
+<p><%= @post.user.username %></p>
+
+<h2><p id= "my-post"> My Posts </p></h2>
+  <%= @post.body %>
+
+
+  <%if @post.user_id == current_user.id%>
+    <%= link_to("Delete", post_path(@post), method: :delete) %>
+	  <%= link_to("Edit", edit_post_path, method: :get) %>
+  <% end %>
+
+<% if false %>
+  <%= form_for ([@post,@comment]) do |f| %>
+	  <%=f.text_field :body %>
+	  <%=f.hidden_field :user_id, value: session[:user_id] %>
+	  <%=f.hidden_field :post_id, value: @post.id %>
+	  <%=f.submit "Add Comment"%>
+  <% end %>
+<% end %>
+	
+
+<h2><p id="p-comments">Comments</p></p>	
+<% @post.comments.each do |x| %>
+  <p><%= x.user.username %></p>
+  <p><%= x.body %></p>
+  <%if @post.user_id == current_user.id || x.user.id == current_user.id%>
+		<%= button_to "Delete comment", post_comment_path(@post.id, x.id), method: :delete %>
+	<% end %>
+<% end %>
+
+
+

@@ -1,0 +1,21 @@
+<p><%= form_for User.new do |f| %></p>
+
+  <%= f.label :fname, "First name" %><br>
+  <%= f.text_field :fname %><br>
+
+  <%= f.label :lname, "Last name" %><br>
+  <%= f.text_field :lname %><br>
+
+  <%= f.label :email, "email" %><br>
+  <%= f.text_field :email %><br>
+
+  <%= f.label :username, "username" %><br>
+  <%= f.text_field :username %><br>
+
+  <%= f.label :password, "Password" %><br>
+  <%= f.text_field :password %><br>
+
+  <%= f.submit %><br>
+
+<% end %>
+<%= link_to("Back", users_path)%>

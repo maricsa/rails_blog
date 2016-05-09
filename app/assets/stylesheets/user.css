@@ -1,0 +1,32 @@
+#userlist {
+	width: 400px;
+	margin-top: 50px;
+	padding: 30px;
+	margin-left: 400px;
+	border-color: black;
+	background-color: white;
+	font-size: 30px;
+}
+
+#userw {
+	text-align: center;
+	color: #DC7633;
+
+}
+#postd {
+	width: 200px;
+	height: 100px;
+	margin-left: 560px;
+}
+
+#commentd {
+	width: 200px;
+	height: 200px;
+	margin-left: 560px;
+}
+
+#cd {
+	width: 150px;
+	height: 80px;
+	margin-left: 560px;
+}

@@ -1,0 +1,16 @@
+
+<div id="post-all">
+  <h1> All Posts </h1>
+    <p><% @posts.each do |p| %></p>
+    <p><%= link_to p.user.username, users_path %></p>
+    <p><%= link_to "Post", post_path(p.id) %></p>  
+  <% end %>
+</div>
+
+
+
+
+
+
+
+
